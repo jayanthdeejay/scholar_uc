@@ -18,3 +18,7 @@
 
 # Ignore avatars
 /public/system/avatars/
+
+# Remove so keys don't get accidentally commited
+/config/browse_everything_providers.yml
+
