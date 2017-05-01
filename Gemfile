@@ -47,7 +47,7 @@ gem 'change_manager', git: "https://github.com/lawhorkl/change_manager.git", ref
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-#gem 'clamav'
+gem 'clamav'
 
 group :development, :test do
   gem 'brakeman', :require => false
