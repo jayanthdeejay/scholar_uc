@@ -32,7 +32,7 @@ module ScholarUc
 
     config.exceptions_app = self.routes
 
-    config.application_root_url = 'http://localhost:3000'
+    config.application_root_url = 'http://scholar-beta.uc.edu'
     config.autoload_paths << Rails.root.join('lib')
     config.autoload_paths << Rails.root.join('services')
     config.autoload_paths << Rails.root.join('jobs')
