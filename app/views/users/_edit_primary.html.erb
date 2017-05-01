@@ -132,6 +132,7 @@
         <% on.authenticated_connection do |profile| %>
         <% end %>
       <% end %>
+    <p><strong>Note: ORCID features are not enabled during this beta phase</strong></p>
     <%= render partial: 'orcid/profile_connections/orcid_connector', locals: {default_search_text: current_user.name } %>
   </div>
 </div>
