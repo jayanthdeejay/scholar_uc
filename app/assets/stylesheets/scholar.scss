@@ -71,16 +71,10 @@ div[class*="_admin_set_id"] {
   margin-bottom: 20px;
 }
 
-.featured-thumb {
-  width: 270px;
-  height: 270px;
-}
-
 .featured-thumb img {
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
+    width: 270px;
+    height: 270px;
+    object-fit: cover;
 }
 
 .partners-text {
@@ -154,6 +148,30 @@ div[class*="_admin_set_id"] {
 /* add padding between login form fields */
 label[for=user_password] { 
   padding-top: 20px;
+}
+
+.table-format-advice {
+    width: 100%;
+  td {
+    vertical-align: top;
+    width: 25%;
+  }
+  th {
+    width: 25%;
+    text-align: left;
+    padding-left: .5em;
+  }
+}
+
+.help-description {
+  dt {
+    margin-top: 1em;
+    font-weight: normal;
+  }
+  dd {
+    padding-left: 1em;
+    font-style: italic;
+  }
 }
 
 /* Medium devices */
