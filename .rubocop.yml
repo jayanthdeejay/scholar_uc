@@ -47,10 +47,12 @@ Metrics/ModuleLength:
 Metrics/PerceivedComplexity:
   Exclude:
     - 'app/helpers/change_manager/change_manager_helper.rb'
+    - 'app/helpers/sufia_helper.rb'    
 
 Metrics/CyclomaticComplexity:
   Exclude:
   - 'app/forms/sufia/forms/batch_upload_form.rb'
+  - 'app/helpers/sufia_helper.rb'
 
 Style/BlockDelimiters:
   Exclude:
@@ -143,6 +145,7 @@ RSpec/AnyInstance:
     - 'spec/features/end_to_end_spec.rb'
     - 'spec/support/shared/doi_request.rb'
     - 'spec/models/sufia/ability_spec.rb'
+    - 'spec/controllers/collection_avatars_controller_spec.rb'
 
 RSpec/DescribeClass:
   Exclude:
