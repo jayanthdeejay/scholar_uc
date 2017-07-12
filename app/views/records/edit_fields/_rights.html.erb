@@ -1,4 +1,4 @@
-<% license_service = CurationConcerns::LicenseService.new %>
+<% license_service = Hyrax::LicenseService.new %>
 <label class="control-label select required" for="work_rights">
   Rights  
   <span class="label label-info required-tag">required</span>
@@ -8,7 +8,7 @@
       <div class="col-sm-9">
         <%= f.input :rights, as: :select,
           collection: license_service.select_active_options,
-          include_blank: false,
+          include_blank: 'Use License Wizard or choose directly from the dropdown.',
           item_helper: license_service.method(:include_current_value),
           input_html: { class: 'rights rights-selector', multiple: false },
           label: false

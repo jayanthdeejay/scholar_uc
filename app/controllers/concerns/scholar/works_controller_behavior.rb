@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 # Generated via
-#  `rails generate curation_concerns:work GenericWork`
+#  `rails generate hyrax:work GenericWork`
 
 module Scholar
   module WorksControllerBehavior
@@ -36,7 +36,7 @@ module Scholar
     def show
       super
       permalink_message = "Permanent link to this page"
-      @permalinks_presenter = PermalinksPresenter.new(main_app.common_object_path, permalink_message)
+      @permalinks_presenter = PermalinksPresenter.new(main_app.common_object_path(locale: nil), permalink_message)
     end
 
     private

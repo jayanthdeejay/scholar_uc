@@ -49,11 +49,15 @@ describe 'permalinks' do
     it "displays a link to the collection" do
       expect(page).to have_content "Link to this page: http://my.url/collections/#{collection.id}"
     end
+
+    it "excludes locales from the permalink" do
+      expect(page).to have_no_content "?locale=en"
+    end
   end
 
   describe 'user profiles' do
     let(:user) { create(:user) }
-    let(:profile_path) { sufia.profile_path(user.to_param) }
+    let(:profile_path) { hyrax.profile_path(user.to_param) }
 
     before do
       sign_in user
