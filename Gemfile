@@ -55,9 +55,6 @@ gem 'change_manager', git: "https://github.com/lawhorkl/change_manager.git", ref
 
 gem 'clamav'
 
-gem 'mysql2'
->>>>>>> develop
-
 group :development, :test do
   gem 'brakeman', require: false
 end
