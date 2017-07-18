@@ -20,8 +20,12 @@ class ApplicationController < ActionController::Base
 
     # override devise helper and route to CC.new when parameter is set
     def after_sign_in_path_for(_resource)
-      return root_path unless parameter_set?
-      route_to_classify_concerns_path
+      if cookies[:login_type] == "shibboleth"
+        "/Shibboleth.sso/Logout?return=https%3A%2F%2Fbamboo_shibboleth_logout"
+      else
+        return root_path unless parameter_set?
+        route_to_classify_concerns_path
+      end
     end
 
     # store paramater in request

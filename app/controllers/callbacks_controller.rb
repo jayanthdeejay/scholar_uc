@@ -52,7 +52,7 @@ class CallbacksController < Devise::OmniauthCallbacksController
   end
 
   def user_exists?
-    @user = User.find_by_provider_and_uid(@omni['provider'], @omni['uid'])
+    @user = User.where(provider: @omni['provider'], uid: @omni['uid']).first
   end
 
   def update_shibboleth_attributes
@@ -70,17 +70,17 @@ class CallbacksController < Devise::OmniauthCallbacksController
 
   def create_user
     @user = User.create provider: @omni.provider, uid: @omni.uid, email: @email,
-      password: Devise.friendly_token[0,20], user_does_not_require_profile_update: false
+      password: Devise.friendly_token[0,20], profile_update_not_required: false
     update_user_shibboleth_attributes
   end
 
   def update_user_shibboleth_attributes
-    @user.title        = @omni.extra.raw_info.title
-    @user.telephone    = @omni.extra.raw_info.telephoneNumber
-    @user.first_name   = @omni.extra.raw_info.givenName
-    @user.last_name    = @omni.extra.raw_info.sn
-    @user.ucstatus     = @omni.extra.raw_info.uceduPrimaryAffiliation
-    @user.ucdepartment = @omni.extra.raw_info.ou
+    @user.title              = @omni.extra.raw_info.title
+    @user.telephone          = @omni.extra.raw_info.telephoneNumber
+    @user.first_name         = @omni.extra.raw_info.givenName
+    @user.last_name          = @omni.extra.raw_info.sn
+    @user.uc_affiliation     = @omni.extra.raw_info.uceduPrimaryAffiliation
+    @user.ucdepartment       = @omni.extra.raw_info.ou
     @user.save
   end
 
