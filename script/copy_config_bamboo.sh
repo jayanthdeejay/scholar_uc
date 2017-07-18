@@ -10,3 +10,4 @@ cp /srv/apps/curate/curate_uc-STAGE/config/solr.yml.bamboo /srv/apps/curate/cura
 cp /srv/apps/curate/curate_uc-STAGE/config/initializers/scholar_uc.rb.sample /srv/apps/curate/curate_uc-STAGE/config/initializers/scholar_uc.rb
 cp /srv/apps/curate/curate_uc-STAGE/config/initializers/hyrax.rb.bamboo /srv/apps/curate/curate_uc-STAGE/config/initializers/hyrax.rb
 cp /srv/apps/curate/curate_uc-STAGE/config/initializers/devise.rb.bamboo /srv/apps/curate/curate_uc-STAGE/config/initializers/devise.rb
+cp /srv/apps/curate/curate_uc-STAGE/config/authentication.yml.bamboo /srv/apps/curate/curate_uc-STAGE/config/authentication.yml

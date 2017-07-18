@@ -48,4 +48,12 @@ class StaticController < ApplicationController
   def doi_help
     render "static/doi_help"
   end
+
+  def login
+    if AUTH_CONFIG['shibboleth_enabled']
+      render "static/login"
+    else
+      redirect_to new_user_session_path
+    end
+  end
 end
