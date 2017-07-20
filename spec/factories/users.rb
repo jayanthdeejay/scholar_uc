@@ -25,6 +25,19 @@ FactoryGirl.define do
       end
     end
   end
+
+  factory :shibboleth_user, class: 'User' do
+    ignore do
+      count 1
+      person_pid nil
+    end
+    email 'fake.user@uc.edu'
+    first_name 'Fake'
+    last_name 'User'
+    password '12345678'
+    password_confirmation '12345678'
+    sign_in_count { count.to_s }
+  end
 end
 
 class MockFile

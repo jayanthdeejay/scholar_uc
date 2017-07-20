@@ -52,7 +52,12 @@ class CallbacksController < Devise::OmniauthCallbacksController
   end
 
   def user_exists?
-    @user = User.where(provider: @omni['provider'], uid: @omni['uid']).first
+    @user = find_by_provider_and_uid
+    return true unless @user.nil?
+  end
+
+  def find_by_provider_and_uid
+    User.where(provider: @omni['provider'], uid: @omni['uid']).first
   end
 
   def update_shibboleth_attributes
@@ -65,7 +70,7 @@ class CallbacksController < Devise::OmniauthCallbacksController
 
   def create_account
     create_user
-    send_welcome_email
+#    send_welcome_email
   end
 
   def create_user
