@@ -6,7 +6,7 @@ describe CallbacksController do
     let(:uid) { 'sixplus2@test.com' }
     let(:provider) { :orcid }
     before do
-      @request.env["devise.mapping"] = Devise.mappings[:user] # rubocop:disable RSpec/InstanceVariable
+      @request.env["devise.mapping"] = Devise.mappings[:user]
       omniauth_hash_orcid = { "provider": "orcid",
                               "uid": "0000-0003-2012-0010",
                               "info": {
@@ -43,7 +43,7 @@ describe CallbacksController do
     let(:provider) { :shibboleth }
     let(:uid) { 'sixplus2@test.com' }
 
-    before(:each) do
+    before do
       @request.env["devise.mapping"] = Devise.mappings[:user]
       omniauth_hash = { provider: 'shibboleth',
                         uid: uid,
@@ -57,8 +57,7 @@ describe CallbacksController do
                             uceduPrimaryAffiliation: 'staff',
                             ou: 'department'
                           }
-                        }
-      }
+                        } }
       OmniAuth.config.add_mock(provider, omniauth_hash)
       request.env["omniauth.auth"] = OmniAuth.config.mock_auth[provider]
     end
@@ -75,7 +74,7 @@ describe CallbacksController do
     end
 
     shared_examples 'Shibboleth login' do
-      before(:each) do
+      before do
         allow(controller).to receive(:find_by_provider_and_uid).and_return(user)
       end
 

@@ -144,7 +144,7 @@ RSpec.configure do |config|
   end
 
   # Allow cookies to be set in feature tests (for UC Shibboleth testing)
-  config.include ShowMeTheCookies, :type => :feature
+  config.include ShowMeTheCookies, type: :feature
 end
 
 VCR.configure do |c|

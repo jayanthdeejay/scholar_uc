@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'rails_helper'
 
 describe 'UC account workflow', type: :feature do
@@ -29,8 +30,8 @@ describe 'UC account workflow', type: :feature do
 
     it 'does not display the Shared links at the bottom' do
       visit new_user_password_path
-      expect(page).to_not have_link('Sign in', href: '/users/sign_in')
-      expect(page).to_not have_link('Sign up', href: '/users/sign_up')
+      expect(page).not_to have_link('Sign in', href: '/users/sign_in')
+      expect(page).not_to have_link('Sign up', href: '/users/sign_up')
     end
   end
 
@@ -51,7 +52,7 @@ describe 'UC account workflow', type: :feature do
       if yaml['test']['shibboleth_enabled'] == true
         expect(page).to have_link('Central Login form', href: '/users/auth/shibboleth')
       else
-        expect(page).to_not have_link('Central Login form', href: '/users/auth/shibboleth')
+        expect(page).not_to have_link('Central Login form', href: '/users/auth/shibboleth')
       end
     end
 
@@ -97,8 +98,8 @@ describe 'UC account workflow', type: :feature do
       login_as(user)
       user.provider = 'shibboleth'
       visit hyrax.edit_profile_path(user)
-        page.should_not have_field("user[password]")
-        page.should_not have_field("user[password_confirmation]")
+      page.should_not have_field("user[password]")
+      page.should_not have_field("user[password_confirmation]")
     end
   end
 
