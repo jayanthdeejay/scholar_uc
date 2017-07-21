@@ -89,6 +89,6 @@ class CallbacksController < Devise::OmniauthCallbacksController
     end
 
     def send_welcome_email
-      WelcomeMailer.welcome_email(@email).deliver
+      WelcomeMailer.welcome_email(@user).deliver
     end
 end
