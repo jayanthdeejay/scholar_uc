@@ -11,7 +11,7 @@ class CallbacksController < Devise::OmniauthCallbacksController
       redirect_to landing_page
     else
       retrieve_shibboleth_attributes
-      create_or_update_account
+      create_or_update_user
       sign_in_shibboleth_user
     end
   end
@@ -23,11 +23,12 @@ class CallbacksController < Devise::OmniauthCallbacksController
       @email = use_uid_if_email_is_blank
     end
 
-    def create_or_update_account
+    def create_or_update_user
       if user_exists?
         update_shibboleth_attributes if user_has_never_logged_in?
       else
-        create_account
+        create_user
+        send_welcome_email
       end
     end
 
@@ -68,11 +69,6 @@ class CallbacksController < Devise::OmniauthCallbacksController
       @user.sign_in_count.zero?
     end
 
-    def create_account
-      create_user
-      # send_welcome_email
-    end
-
     def create_user
       @user = User.create provider: @omni.provider,
                           uid: @omni.uid,
@@ -94,11 +90,5 @@ class CallbacksController < Devise::OmniauthCallbacksController
 
     def send_welcome_email
       WelcomeMailer.welcome_email(@email).deliver
-    end
-
-    def apply_deposit_authorization(target)
-      target.apply_depositor_metadata(@user.user_key)
-      target.read_groups = [Hydra::AccessControls::AccessRight::PERMISSION_TEXT_VALUE_PUBLIC]
-      target
     end
 end
