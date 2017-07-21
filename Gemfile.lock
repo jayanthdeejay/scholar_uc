@@ -713,6 +713,8 @@ GEM
       rubyzip (~> 1.0)
     shoulda-matchers (3.1.1)
       activesupport (>= 4.0.0)
+    show_me_the_cookies (3.1.0)
+      capybara (~> 2.0)
     sidekiq (5.0.3)
       concurrent-ruby (~> 1.0)
       connection_pool (~> 2.2, >= 2.2.0)
@@ -862,6 +864,7 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   selenium-webdriver
   shoulda-matchers (~> 3.1.1)
+  show_me_the_cookies
   sidekiq
   solr_wrapper (>= 0.13)
   spring

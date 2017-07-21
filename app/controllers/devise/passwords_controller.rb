@@ -1,7 +1,7 @@
+# frozen_string_literal: true
 require Devise::Engine.root.join('app/controllers/devise/passwords_controller.rb')
 class Devise::PasswordsController
-
-# POST /resource/password
+  # POST /resource/password
   def create
     if resource_params['email'].end_with? '@uc.edu'
       redirect_to login_path

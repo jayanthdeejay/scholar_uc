@@ -97,6 +97,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'poltergeist'
   gem 'shoulda-matchers', '~> 3.1.1'
+  gem 'show_me_the_cookies'
 end
 
 group :development, :test do
