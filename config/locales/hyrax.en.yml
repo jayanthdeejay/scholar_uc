@@ -7,6 +7,8 @@ en:
       metadata:
         header: Attributes
     brought_to_you_by_html:  "Brought to you by the <a href=\"http://libraries.uc.edu/\">University of Cincinnati Libraries</a> and <a href=\"http://ucit.uc.edu/\">UC Information Technologies</a>."
+    user_profile:
+      tab_highlighted:   "Highlighted Works"
     dashboard:
       help_statement_html:      "<strong>Please Note:</strong> Your proxies can do anything on your behalf in Scholar@UC. Be selective in who you give proxy access. If you authorize a proxy they can create and upload files on your behalf as well as edit, or delete those corresponding works and files. The proxy relationship can be revoked by the owner at any time. Use work-specific editors for more fine-grained access control."
       view_collections:         "View My Collections"
@@ -31,9 +33,12 @@ en:
           audio_link: 'Request a copy of this audio file'
           video_link: 'Request a copy of this video'
     footer:
-      copyright_info_html: "<a href=\"http://commercialization.uc.edu/copyright-infringement\">Copyright Information</a>"
-      copyright_html: "&copy; 2017 <a href=\"http://www.uc.edu/\"><u>University of Cincinnati</u></a>"
-      clery_heoa_notice_html: "<a href=\"http://www.uc.edu/publicsafety/clery/annual-security-report.html\">Clery and HEOA Notice</a>"
+      copyright_info_html: "<a href=\"https://commercialization.uc.edu/copyright-infringement\">Copyright Information</a>"
+      copyright_html: "&copy; 2017 <a href=\"https://www.uc.edu/\"><u>University of Cincinnati</u></a>"
+      clery_heoa_notice_html: "<a href=\"https://www.uc.edu/publicsafety/clery/annual-security-report.html\">Clery and HEOA Notice</a>"
+      based_on_html: "Based on <a href=\"https://github.com/samvera/hyrax\">Hyrax</a>"
+      uc_alerts_html: "<a href=\"https://www.uc.edu/alert.html\">UC Alerts</a>"
+      eaccessibility_concern_html: "<a href=\"https://www.uc.edu/ucit/community/accessibility/eAccessibility-form.html\">eAccessibility Concern</a>"
     homepage:
       featured_works:
         tab_label:          'Featured Works'
@@ -49,7 +54,7 @@ en:
     institution:
       name: 'University of Cincinnati'
     institution_name: 'University of Cincinnati'
-    made_possible_by_html: "Made possible by the <a href=\"http://projecthydra.org\">Hydra</a> project."
+    made_possible_by_html: "Made possible by the <a href=\"https://www.samvera.org\">Samvera</a> project."
     non_discrimination_notice_html: "<a href=\"http://uc.edu/about/policies/non-discrimination.html\">Notice of Non-Discrimination</a>"
     product_name:       "Scholar@UC"
     product_twitter_handle: "@Scholar@UC"
@@ -58,10 +63,16 @@ en:
     upload:
       cloud_timeout_message_html: "If you have files on cloud storage sites such as Box, Dropbox, Google Drive, or Kaltura, you can click the \"Browse cloud files\" button to select and upload those files directly to Scholar@UC.<br /><br />Please note that if you upload a large number of files within a short period of time, the cloud provider may not be able to accommodate your request. If you experience any errors uploading from the cloud, let us know via the %{contact_href}."
     visibility:
-      open:
-        text: "Public"
       authenticated:
         text: 'University of Cincinnati'
+        note_html: Restrict access to logged-in users
+      embargo:
+        note_html: Set a date for future release
+      open:
+        note_html: Make available to all<br />(see <a href="/creators_rights" target=\"_blank\">Creator's Rights</a> for more information) 
+        warning_html: ""
+      private:
+        note_html: Keep to myself with option to share
     welcome:
       waive_page: "Click here to hide this welcome page from displaying when you log in"
     works:
