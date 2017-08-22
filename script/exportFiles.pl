@@ -61,6 +61,8 @@ foreach my $row (@PIDandFileVersion) {
     chomp $exportFile;
     `$exportFile`;
 
+    #Extracts checksum from characterization file but have to write code to look for the latest characterization file and extract latest checksum
+    #On Larry, as of now, all characterization files are in version .0
     my $checksum = 'find '.$datastreamPath.' -name "*'.$partialPID.'*characterization*'.'" -exec grep \'md5checksum\' \{\} \;';
     $checksum = `$checksum`;
     $checksum = (split(/</,(split(/>/,$checksum))[1]))[0];
