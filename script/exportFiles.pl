@@ -49,6 +49,7 @@ while(my $PID = <$inputFile>) {
     $PIDandFileVersion[$.-1][1] = $fileVersion;
 }
 
+
 #Creates directories with PID as their name and then copies respective file into that directory
 foreach my $row (@PIDandFileVersion) {
     `mkdir $exportPath/@$row[0]`;
@@ -59,5 +60,14 @@ foreach my $row (@PIDandFileVersion) {
     $exportFile = 'cp -p '.$exportFile.' '.$exportPath.'/'.@$row[0].'/';
     chomp $exportFile;
     `$exportFile`;
+
+    my $checksum = 'find '.$datastreamPath.' -name "*'.$partialPID.'*characterization*'.'" -exec grep \'md5checksum\' \{\} \;';
+    $checksum = `$checksum`;
+    $checksum = (split(/</,(split(/>/,$checksum))[1]))[0];
+    my $md5file = $exportPath.'/'.@$row[0].'/'.'oldChecksum.md5';
+    open (my $md5, '>', $md5file) or die $!;
+    print $md5 $checksum;
+    close $md5;
 }
+close $inputFile;
 print "\n";
