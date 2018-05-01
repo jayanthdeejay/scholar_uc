@@ -102,7 +102,7 @@ end
 
 group :development, :test do
   gem 'coveralls', require: false
-  gem 'rubocop', '~> 0.48.1'
+  gem 'rubocop', '~> 0.55.0'
   # version has to be exactly 1.7, no variation.
   gem 'rubocop-rspec', '1.10.0'
   gem 'rails-controller-testing'
